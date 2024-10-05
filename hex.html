@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯合迎新闖關</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-800 h-screen flex items-center justify-center">
+    <div class="relative w-full max-w-xs bg-gray-800 rounded-lg p-4">
+        <!-- Logo or Title Section -->
+        <a href="home.html">
+            <div class="text-center mb-8">
+                <!-- 密 OR 密蜜 -->
+                <div class="flex flex-col items-center">
+                    <div class="text-white font-bold text-6xl leading-none flex">
+                        <span class="block">秘</span>
+                        <span class="block text-red-400">密</span>
+                    </div>
+                    <div class="text-blue-400 text-5xl my-2 font-bold">OR</div>
+                    <div class="text-white font-bold text-6xl leading-none flex">
+                        <span class="block">秘</span>
+                        <span class="block text-yellow-500">蜜</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Buttons Section -->
+        <div class="text-center">
+            <div class="w-full py-3 bg-gray-600 text-white font-bold text-xl rounded-lg tracking-widest">
+                <h1 class="text-center text-white font-bold text-2xl leading-none">HEX</h1>
+            </div>
+            <div class="my-5">
+                <label for="hex_text" class="block mb-2 font-medium text-white">你想嘗試解碼的資料</label>
+                <input id="hex_text"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="hex..."></input>
+            </div>
+            <button type="submit" onclick="hex2a()"
+                class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                點我開始解碼！
+            </button>
+        </div>
+        <!--footer-->
+        <div class="text-center text-gray-400 font-thin mt-10">
+            <span>Made by <a href="https://xiung.me"><u>xiung</u></a>.</span>
+        </div>
+    </div>
+</body>
+
+<script>
+    obj = document.getElementById("hex_text")
+    function hex2a() {
+        hex = obj.value
+        var str = '';
+        for (var i = 0; i < hex.length; i += 2) str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+        
+        obj.value = str
+    }
+</script>
+
+</html>
